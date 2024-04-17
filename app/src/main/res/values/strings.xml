@@ -2,4 +2,6 @@
     <string name="app_name">RecyclingApp</string>
     <string name="log_in_as">Log in as:</string>
     <string name="log_in">Log in</string>
+    <string name="approve">Approve</string>
+    <string name="approvetext">Έγκριση καταγραφής και ανταμοιβή πόντων</string>
 </resources>

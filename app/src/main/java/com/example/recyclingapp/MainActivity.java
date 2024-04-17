@@ -28,4 +28,7 @@ public class MainActivity extends AppCompatActivity {
         rg.addView(adminButton);
 
     }
+    public void approveRecordAndRewardPoints(View v){
+
+    }
 }
