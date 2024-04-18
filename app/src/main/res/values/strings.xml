@@ -4,4 +4,5 @@
     <string name="log_in">Log in</string>
     <string name="approve">Approve</string>
     <string name="approvetext">Έγκριση καταγραφής και ανταμοιβή πόντων</string>
+    <string name="submit">Submit</string>
 </resources>
