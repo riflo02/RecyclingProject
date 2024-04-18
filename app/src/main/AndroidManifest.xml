@@ -13,6 +13,9 @@
         android:theme="@style/Theme.RecyclingApp"
         tools:targetApi="31">
         <activity
+            android:name=".RecyclingForm"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
