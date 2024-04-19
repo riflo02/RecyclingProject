@@ -11,8 +11,13 @@ public class AdminController {
     }
 
     //Method for approving a record and awarding points
-    public void approveRecord(int recordId){
-        recyclingRecordService.approveRecord(recordId);
+    public void approveAndReward(RecyclingRecord record, int points) {
+        recyclingRecordService.approveRecyclingRecord(record); // Εγκρίνει την καταχώρηση
+        User user = userService.getUserById(record.getUserId());
+        userService.assignPointsForReward(user.getUserId(), points); // Αποδίδει πόντους στον χρήστη
+    }
 
+    public void rejectRecyclingRecord(RecyclingRecord record) {
+        recyclingRecordService.rejectRecyclingRecord(record);
     }
 }

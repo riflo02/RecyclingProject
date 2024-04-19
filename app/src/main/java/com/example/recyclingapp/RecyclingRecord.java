@@ -24,26 +24,32 @@ public class RecyclingRecord {
 
     // Getters και Setters
     public long getId() {
+
         return id;
     }
 
-    public long getUserId() {
+    public String getUserId() {
+
         return userId;
     }
 
     public String getMaterialType() {
+
         return materialType;
     }
 
     public double getQuantity() {
+
         return quantity;
     }
 
     public Date getTimestamp() {
+
         return timestamp;
     }
 
     public boolean isApproved() {
+
         return approved;
     }
 

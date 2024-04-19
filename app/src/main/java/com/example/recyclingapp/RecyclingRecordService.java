@@ -8,16 +8,19 @@ public class RecyclingRecordService {
     private List<RecyclingRecord> records;
 
     public RecyclingRecordService() {
+
         this.records = new ArrayList<>();
     }
 
     // Προσθήκη νέας καταγραφής
     public void addRecord(RecyclingRecord record) {
+
         records.add(record);
     }
 
     // Ανάκτηση όλων των καταγραφών
     public List<RecyclingRecord> getAllRecords() {
+
         return records;
     }
 
@@ -31,14 +34,13 @@ public class RecyclingRecordService {
     }
 
     // Έγκριση καταγραφής
-    public void approveRecord(long recordId) {
-        for (RecyclingRecord record : records) {
-            if (record.getId() == recordId) {
-                record.setApproved(true);
-                // Εδώ μπορείτε να προσθέσετε κώδικα για την αυτόματη απόδοση πόντων ανταμοιβής
-                break;
-            }
-        }
+    public void approveRecyclingRecord(RecyclingRecord record) {
+        record.setApproved(true);
+    }
+
+
+    public void rejectRecyclingRecord(RecyclingRecord record) {
+        record.setApproved(false);
     }
 }
 
