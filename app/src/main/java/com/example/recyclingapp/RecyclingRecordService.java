@@ -18,7 +18,7 @@ public class RecyclingRecordService {
                 {
                     rec.setApproved(true);
                     applicant.reward(rec.getMaterialType(), rec.getQuantity(), rec.getRewardPoints());
-                    //Mikrh moy Evaaa
+
                 }
             }
         }

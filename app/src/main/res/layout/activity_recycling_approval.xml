@@ -6,34 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".RecyclingApproval">
 
-    <TextView
-        android:id="@+id/approveText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Με λενε Φλορις"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/acceptButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Accept"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rejectButton"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/approveText" />
+        app:layout_constraintTop_toBottomOf="@+id/registerText"
+        app:layout_constraintVertical_bias="0.504" />
 
-    <Button
-        android:id="@+id/rejectButton"
+    <TextView
+        android:id="@+id/userInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reject"
-        app:layout_constraintBaseline_toBaselineOf="@+id/acceptButton"
+        android:text="User:"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nameText"
+        app:layout_constraintEnd_toStartOf="@+id/nameText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/acceptButton" />
+        app:layout_constraintStart_toEndOf="@+id/userInput"
+        tools:layout_editor_absoluteY="113dp" />
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register:"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/regInput"
+        app:layout_constraintEnd_toStartOf="@+id/regInput"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/regInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/registerText"
+        tools:layout_editor_absoluteY="238dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
