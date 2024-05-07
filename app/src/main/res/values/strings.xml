@@ -5,4 +5,7 @@
     <string name="approve">Approve</string>
     <string name="approvetext">Έγκριση καταγραφής και ανταμοιβή πόντων</string>
     <string name="submit">Submit</string>
+    <string name="registration_form">Registration Form</string>
+    <string name="material">Material</string>
+    <string name="quantity">Quantity</string>
 </resources>
