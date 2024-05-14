@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_primary_dark"
+    tools:context=".FirstFragment">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        style="@android:style/Widget.Button"
+        android:layout_width="284dp"
+        android:layout_height="53dp"
+        android:background="@color/screenBackground"
+        android:drawableStart="@drawable/ic_2"
+        android:drawablePadding="20dp"
+        android:paddingStart="20dp"
+        android:text="Account Settings"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="579dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton"
+        style="@android:style/Widget.Button"
+        android:layout_width="364dp"
+        android:layout_height="53dp"
+        android:background="@color/screenBackground"
+        android:text="Back to Main page"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="644dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="176dp"
+        android:layout_height="51dp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="497dp" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="AnExample@gmail.com"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="356dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_dialog_email"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="220dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Walter White"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="249dp" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="6985685983"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/black"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="422dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@android:drawable/stat_sys_phone_call"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="432dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Reward "
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="304dp"
+        tools:layout_editor_absoluteY="516dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current reward"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="516dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_background"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="-53dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/top_background"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="-53dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="210dp"
+        android:layout_height="166dp"
+        android:src="@drawable/profile1"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="83dp" />>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
