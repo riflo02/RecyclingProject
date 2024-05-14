@@ -13,19 +13,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_page);
 
-        rg = findViewById(R.id.rg_user_admin);
-        RadioButton userButton = new RadioButton(this);
-        userButton.setId(View.generateViewId());
-        userButton.setText("User");
+       // rg = findViewById(R.id.rg_user_admin);
+    //    RadioButton userButton = new RadioButton(this);
+      //  userButton.setId(View.generateViewId());
+      //  userButton.setText("User");
 
-        RadioButton adminButton = new RadioButton(this);
-        adminButton.setId(View.generateViewId());
-        adminButton.setText("Administrator");
+      //  RadioButton adminButton = new RadioButton(this);
+      //  adminButton.setId(View.generateViewId());
+      //  adminButton.setText("Administrator");
 
-        rg.addView(userButton);
-        rg.addView(adminButton);
+    //    rg.addView(userButton);
+      //  rg.addView(adminButton);
 
     }
     public void approveRecordAndRewardPoints(View v){

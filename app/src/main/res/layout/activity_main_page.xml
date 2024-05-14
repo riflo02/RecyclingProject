@@ -138,6 +138,6 @@
         android:layout_height="166dp"
         android:src="@drawable/profile1"
         tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="68dp" />>
+        tools:layout_editor_absoluteY="83dp" />>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
