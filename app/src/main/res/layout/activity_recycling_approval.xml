@@ -4,59 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecyclingApproval">
+    android:background="@color/design_default_color_primary_dark">
+
+    <ImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="168dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/profile1"
+        app:layout_constraintBottom_toTopOf="@+id/textUserType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textUserType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Διαχειριστής"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textRequestFromUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewProfile"
+        app:layout_constraintVertical_bias="0.386" />
+
+    <TextView
+        android:id="@+id/textRequestFromUser"
+        android:layout_width="302dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="16dp"
+        android:text="Η αίτηση υποβλήθηκε από: Χρήστης"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupApproval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textUserType" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupApproval"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAutoAssignPoints"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textRequestFromUser">
+
+        <RadioButton
+            android:id="@+id/radioButtonApprove"
+            android:layout_width="153dp"
+            android:layout_height="wrap_content"
+            android:text="Έγκριση"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radioButtonReject"
+            android:layout_width="126dp"
+            android:layout_height="wrap_content"
+            android:text="Μη Έγκριση"
+            android:textColor="@color/white" />
+
+    </RadioGroup>
+
 
     <Button
-        android:id="@+id/acceptButton"
+        android:id="@+id/buttonAutoAssignPoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Accept"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="70dp"
+        android:text="Αυτόματη Αποδοχή Πόντων"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerText"
-        app:layout_constraintVertical_bias="0.586" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupApproval" />
 
-    <TextView
-        android:id="@+id/userInput"
+    <Button
+        android:id="@+id/log_out_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User:"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/nameText"
-        app:layout_constraintEnd_toStartOf="@+id/nameText"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/nameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:text="Log out"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/userInput"
-        tools:layout_editor_absoluteY="113dp" />
-
-    <TextView
-        android:id="@+id/registerText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register:"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/regInput"
-        app:layout_constraintEnd_toStartOf="@+id/regInput"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/regInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/registerText"
-        tools:layout_editor_absoluteY="238dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
