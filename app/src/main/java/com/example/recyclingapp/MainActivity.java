@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycling_approval);
+        setContentView(R.layout.activity_recycling_form);
 
        // rg = findViewById(R.id.rg_user_admin);
     //    RadioButton userButton = new RadioButton(this);

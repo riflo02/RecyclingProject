@@ -6,6 +6,12 @@
     <string name="approvetext">Έγκριση καταγραφής και ανταμοιβή πόντων</string>
     <string name="submit">Submit</string>
     <string name="registration_form">Registration Form</string>
-    <string name="material">Material</string>
-    <string name="quantity">Quantity</string>
+    <string name="material">Material:</string>
+    <string name="quantity">Quantity:</string>
+    <string-array name="materialsArray">
+        <item>Aluminium</item>
+        <item>Glass</item>
+        <item>Plastic</item>
+        <item>Paper</item>
+    </string-array>
 </resources>
