@@ -7,55 +7,30 @@
     android:background="@color/design_default_color_primary_dark">
 
     <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="410dp"
+        android:layout_height="194dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/top_background" />
+
+    <ImageView
         android:id="@+id/imageViewProfile"
-        android:layout_width="168dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="96dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="20dp"
         android:src="@drawable/profile1"
         app:layout_constraintBottom_toTopOf="@+id/textUserType"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textUserType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Διαχειριστής"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textRequestFromUser"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewProfile"
-        app:layout_constraintVertical_bias="0.386" />
-
-    <TextView
-        android:id="@+id/textRequestFromUser"
-        android:layout_width="302dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="16dp"
-        android:text="Η αίτηση υποβλήθηκε από: Χρήστης"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroupApproval"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textUserType" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421" />
 
     <RadioGroup
         android:id="@+id/radioGroupApproval"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="240dp"
+        android:layout_height="52dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/buttonAutoAssignPoints"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,28 +40,29 @@
 
         <RadioButton
             android:id="@+id/radioButtonApprove"
-            android:layout_width="153dp"
-            android:layout_height="wrap_content"
-            android:text="Έγκριση"
-            android:textColor="@color/white" />
+            android:layout_width="115dp"
+            android:layout_height="match_parent"
+            android:text="Approve"
+            android:textColor="@color/white"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="438dp" />
 
         <RadioButton
             android:id="@+id/radioButtonReject"
             android:layout_width="126dp"
             android:layout_height="wrap_content"
-            android:text="Μη Έγκριση"
-            android:textColor="@color/white" />
+            android:text="Reject"
+            android:textColor="@color/white"
+            tools:layout_editor_absoluteX="168dp"
+            tools:layout_editor_absoluteY="438dp" />
 
     </RadioGroup>
-
 
     <Button
         android:id="@+id/buttonAutoAssignPoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="70dp"
-        android:text="Αυτόματη Αποδοχή Πόντων"
+        android:text="Automatic Points Award"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -97,11 +73,38 @@
         android:id="@+id/log_out_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
         android:text="Log out"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textRequestFromUser"
+        android:layout_width="302dp"
+        android:layout_height="24dp"
+        android:text="The request was submitted by: User"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupApproval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/textUserType"
+        android:layout_width="115dp"
+        android:layout_height="23dp"
+        android:text="Administrator"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.652" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
