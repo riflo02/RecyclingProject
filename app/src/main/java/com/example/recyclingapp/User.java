@@ -8,6 +8,7 @@ public class User {
     private String id;
     private String username;
     private String password;
+    private String email;
     private double materialKgs=0;
     private double glassKg=0;
     private double plasticKg=0;
@@ -15,9 +16,10 @@ public class User {
     private double papperKg=0;
     private int points=0;
 
-    public User(String name, String surname, String username, String password) {
+    public User(String name, String surname,String email, String username, String password) {
         this.name = name;
         this.surname = surname;
+        this.email = email;
         this.username = username;
         this.password = password;
         this.id = UUID.randomUUID().toString();;

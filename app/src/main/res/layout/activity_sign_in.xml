@@ -35,7 +35,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/username"
+                android:id="@+id/username_input"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
@@ -69,11 +69,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:clickable="true"
         android:padding="8dp"
         android:text="Not yet registered? Sign Up Now"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textSize="16sp" />
 
 
 </LinearLayout>
