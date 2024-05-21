@@ -15,11 +15,12 @@ public class User {
     private double papperKg=0;
     private int points=0;
 
-    public User(String name,String email, String username, String password) {
+    public User(String name,String email, String username, String password,int points) {
         this.name = name;
         this.email = email;
         this.username = username;
         this.password = password;
+        this.points = 0;
         this.id = UUID.randomUUID().toString();;
     }
 
