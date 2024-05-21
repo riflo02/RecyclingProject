@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class UserMainPageActivity extends AppCompatActivity {
     @Override
@@ -22,5 +23,14 @@ public class UserMainPageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        String email = intent.getStringExtra("email");
+        String username = intent.getStringExtra("username");
+
+        EditText editText = findViewById(R.id.editTextText2);
+        editText.setText(name);
+
     }
 }

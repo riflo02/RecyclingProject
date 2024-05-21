@@ -12,14 +12,17 @@ import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
 
+    SQLiteConnection lite;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-
         Button signUpButton = findViewById(R.id.signup_button);
         TextView loginText = findViewById(R.id.logIn_txt);
+
+        lite = new SQLiteConnection(this);
 
         loginText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,7 +30,9 @@ public class SignUpActivity extends AppCompatActivity {
                 Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
                 startActivity(intent);
             }
+
         });
+
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +43,6 @@ public class SignUpActivity extends AppCompatActivity {
                 EditText usernameInput = findViewById(R.id.username_input);
                 EditText pass1Input = findViewById(R.id.password1_input);
                 EditText pass2Input = findViewById(R.id.password2_input);
-
                 String name = nameInput.getText().toString();
                 String email = emailInput.getText().toString();
                 String username = usernameInput.getText().toString();
@@ -46,9 +50,17 @@ public class SignUpActivity extends AppCompatActivity {
                 String pass2 = pass2Input.getText().toString();
 
                 if(pass1.equals(pass2)){
-                    new User(name, email,username,pass1);
+                    int points = 0;
+                    User user = new User(name, email,username,pass1,points);
+
+                    lite.insert(name, email , username , pass1);
+
                     //Άνοιγμα MainPage
                     Intent intent = new Intent(SignUpActivity.this, UserMainPageActivity.class);
+                    intent.putExtra("name",name);
+                    intent.putExtra("email",email);
+                    intent.putExtra("username",username);
+                    intent.putExtra("password",pass1);
                     startActivity(intent);
                 }
                 else{
@@ -56,6 +68,9 @@ public class SignUpActivity extends AppCompatActivity {
                 }
 
             }
+
         });
+
     }
+
 }
