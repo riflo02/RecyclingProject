@@ -4,7 +4,6 @@ import java.util.UUID;
 
 public class User {
     private String name;
-    private String surname;
     private String id;
     private String username;
     private String password;
@@ -16,9 +15,8 @@ public class User {
     private double papperKg=0;
     private int points=0;
 
-    public User(String name, String surname,String email, String username, String password) {
+    public User(String name,String email, String username, String password) {
         this.name = name;
-        this.surname = surname;
         this.email = email;
         this.username = username;
         this.password = password;
@@ -27,9 +25,6 @@ public class User {
 
     public String getName() {
         return name;
-    }
-    public String getSurname() {
-        return surname;
     }
     public String getUsername() {
         return username;

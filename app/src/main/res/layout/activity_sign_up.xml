@@ -34,27 +34,36 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/email_input"
+                android:id="@+id/name_input"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginTop="16dp"
-                android:hint="Enter your Email"
+                android:hint="Enter your full Name"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray" />
 
             <EditText
                 android:id="@+id/username_input"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginTop="16dp"
                 android:hint="Enter your Username"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray" />
 
             <EditText
+                android:id="@+id/email_input"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:hint="Enter your Email"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <EditText
                 android:id="@+id/password1_input"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginTop="16dp"
                 android:hint="Enter your Password"
                 android:inputType="textPassword"
@@ -64,7 +73,7 @@
             <EditText
                 android:id="@+id/password2_input"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginTop="16dp"
                 android:hint="Enter again your Password"
                 android:inputType="textPassword"
@@ -83,21 +92,14 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/signup_Text"
+        android:id="@+id/logIn_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Are you registered? Log in now"
+        android:clickable="true"
+        android:text="@string/are_you_registered_log_in_now"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="14sp" />
-
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Log In"
         android:textSize="14sp" />
 
 </LinearLayout>

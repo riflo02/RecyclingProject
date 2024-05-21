@@ -15,10 +15,10 @@ public class SignInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        TextView signupText = findViewById(R.id.SignUp_txt);
 
         //Άνοιγμα παραθύρου για sign in
-        TextView signUpText = findViewById(R.id.signup_Text);
-        signUpText.setOnClickListener(new View.OnClickListener() {
+        signupText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
