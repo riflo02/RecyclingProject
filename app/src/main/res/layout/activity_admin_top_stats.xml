@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_primary_dark">
+
+    <!-- Κορυφαία Στατιστικά του Χρήστη -->
+
+    <!-- Είδη Ανακύκλωσης -->
+
+    <!-- Λίστα Ειδών Ανακύκλωσης -->
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="409dp"
+        android:layout_height="199dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewUserStatistics"
+        app:layout_constraintEnd_toEndOf="@+id/textViewUserStatistics"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textViewUserStatistics"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/top_background" />
+
+    <lecho.lib.hellocharts.view.PieChartView
+        android:id="@+id/pieChartStatistics"
+        android:layout_width="253dp"
+        android:layout_height="194dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bckbtn"
+        app:layout_constraintEnd_toEndOf="@+id/bckbtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/bckbtn"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRecycledItems" />
+
+    <TextView
+        android:id="@+id/textViewUserStatistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="The top stats:"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recycledItemsRecyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/recycledItemsRecyclerView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/recycledItemsRecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycledItemsRecyclerView"
+        android:layout_width="251dp"
+        android:layout_height="156dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/textViewRecycledItems"
+        app:layout_constraintEnd_toEndOf="@+id/textViewRecycledItems"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textViewRecycledItems"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserStatistics" />
+
+    <TextView
+        android:id="@+id/textViewRecycledItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="The items he has recycled:"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/pieChartStatistics"
+        app:layout_constraintEnd_toEndOf="@+id/pieChartStatistics"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/pieChartStatistics"
+        app:layout_constraintTop_toBottomOf="@+id/recycledItemsRecyclerView" />
+
+    <Button
+        android:id="@+id/bckbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pieChartStatistics" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
