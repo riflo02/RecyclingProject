@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    SQLiteConnection lite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +20,6 @@ public class SignUpActivity extends AppCompatActivity {
 
         Button signUpButton = findViewById(R.id.signup_button);
         TextView loginText = findViewById(R.id.logIn_txt);
-
-        lite = new SQLiteConnection(this);
 
         loginText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +50,6 @@ public class SignUpActivity extends AppCompatActivity {
                     int points = 0;
                     User user = new User(name, email,username,pass1,points);
 
-                    lite.insert(name, email , username , pass1);
 
                     //Άνοιγμα MainPage
                     Intent intent = new Intent(SignUpActivity.this, UserMainPageActivity.class);
