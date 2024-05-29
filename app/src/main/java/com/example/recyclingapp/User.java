@@ -12,7 +12,7 @@ public class User {
     private double glassKg=0;
     private double plasticKg=0;
     private double aluminiumKg=0;
-    private double papperKg=0;
+    private double paperKg=0;
     private int points=0;
 
     public User(String name,String email, String username, String password,int points) {
@@ -44,7 +44,7 @@ public class User {
         return aluminiumKg;
     }
     public double getPapperKg() {
-        return papperKg;
+        return paperKg;
     }
 
     public int getPoints() {
@@ -67,7 +67,7 @@ public class User {
         switch (material){
             case "Glass" : glassKg+=kg;
             case "Plastic" : plasticKg+=kg;
-            case "Paper" : papperKg+=kg;
+            case "Paper" : paperKg+=kg;
             case "Aluminium": aluminiumKg+=kg;
         }
     }

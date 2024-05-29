@@ -10,8 +10,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Date;
+
 public class SignUpActivity extends AppCompatActivity {
 
+    private final String myIP = "192.168.56.1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Πληροφορίες από τα κενά για τη δημιουργία χρήστη
+                // Πληροφορίες από τα κενά για τη δημιουργία χρήστη
                 EditText nameInput = findViewById(R.id.name_input);
                 EditText emailInput = findViewById(R.id.email_input);
                 EditText usernameInput = findViewById(R.id.username_input);
@@ -46,21 +49,26 @@ public class SignUpActivity extends AppCompatActivity {
                 String pass1 = pass1Input.getText().toString();
                 String pass2 = pass2Input.getText().toString();
 
-                if(pass1.equals(pass2)){
-                    int points = 0;
-                    User user = new User(name, email,username,pass1,points);
-
-
-                    //Άνοιγμα MainPage
+                if (pass1.equals(pass2)) {
+                    String url = "http://" + myIP + "/logHistory.php?Name=" + name +
+                            "&Email=" + email + "&Username=" + username + "&Password=" + pass1 + "&Points=0&AluminiumKg=0&GlassKg=0&PaperKg=0&PlasticKg=0&timestamp=" + new Date(System.currentTimeMillis()).toString();
+                    try {
+                        OkHttpHandler okHttpHandler = new OkHttpHandler();
+                        okHttpHandler.logHistory(url);
+                        Toast.makeText(getApplicationContext(), "User registered successfully",
+                                Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    // Άνοιγμα MainPage
                     Intent intent = new Intent(SignUpActivity.this, UserMainPageActivity.class);
-                    intent.putExtra("name",name);
-                    intent.putExtra("email",email);
-                    intent.putExtra("username",username);
-                    intent.putExtra("password",pass1);
+                    intent.putExtra("name", name);
+                    intent.putExtra("email", email);
+                    intent.putExtra("username", username);
+                    intent.putExtra("password", pass1);
                     startActivity(intent);
-                }
-                else{
-                    Toast.makeText(SignUpActivity.this, "The passwords do not match",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(SignUpActivity.this, "The passwords do not match", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -68,5 +76,4 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
     }
-
 }
