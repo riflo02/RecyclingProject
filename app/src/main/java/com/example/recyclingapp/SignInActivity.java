@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SignInActivity extends AppCompatActivity {
- String ip = "192.168.56.1";
+ String ip = "192.168.1.16";
     ArrayList<User> uList;
 
     @Override
@@ -78,6 +78,7 @@ public class SignInActivity extends AppCompatActivity {
                                             intent.putExtra("name", user.getName());
                                             intent.putExtra("email", user.getEmail());
                                             intent.putExtra("username", user.getUsername());
+                                            intent.putExtra("points", user.getPoints());
                                             startActivity(intent);
                                             userFound = true;
                                             break;

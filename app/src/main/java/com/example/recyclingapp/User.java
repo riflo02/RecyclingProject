@@ -48,7 +48,7 @@ public class User {
     public double getAluminiumKg() {
         return aluminiumKg;
     }
-    public double getPapperKg() {
+    public double getPaperKg() {
         return paperKg;
     }
 
