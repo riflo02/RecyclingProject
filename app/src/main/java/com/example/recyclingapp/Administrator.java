@@ -13,7 +13,7 @@ public class Administrator {
         userList = new ArrayList<>();
 
     }
-
+/*
     public void approval(String userId, RecyclingRecord rec){
 
         for(User user: userList){
@@ -23,5 +23,7 @@ public class Administrator {
 
 
     }
+
+ */
 
 }

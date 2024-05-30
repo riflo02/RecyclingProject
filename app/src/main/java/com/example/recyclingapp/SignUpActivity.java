@@ -51,7 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if (pass1.equals(pass2)) {
                     String url = "http://" + myIP + "/logHistory.php?Name=" + name +
-                            "&Email=" + email + "&Username=" + username + "&Password=" + pass1 + "&Points=0&AluminiumKg=0&GlassKg=0&PaperKg=0&PlasticKg=0&timestamp=" + new Date(System.currentTimeMillis()).toString();
+                            "&Email=" + email + "&Username=" + username + "&Password=" + pass1 + "&Points=0&AluminiumKg=0&GlassKg=0&PaperKg=0&PlasticKg=0";
                     try {
                         OkHttpHandler okHttpHandler = new OkHttpHandler();
                         okHttpHandler.logHistory(url);

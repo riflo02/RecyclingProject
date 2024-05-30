@@ -8,6 +8,7 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private Integer ID;
     private double materialKgs=0;
     private double glassKg=0;
     private double plasticKg=0;
@@ -15,13 +16,17 @@ public class User {
     private double paperKg=0;
     private int points=0;
 
-    public User(String name,String email, String username, String password,int points) {
+    public User(Integer ID,String name,String email, String username, String password,int points,double aluminiumKg,double glassKg,double paperKg,double plasticKg) {
         this.name = name;
         this.email = email;
         this.username = username;
         this.password = password;
         this.points = 0;
-        this.id = UUID.randomUUID().toString();;
+        this.ID = ID;
+        this.aluminiumKg= aluminiumKg;
+        this.glassKg= aluminiumKg;
+        this.paperKg= aluminiumKg;
+        this.plasticKg= aluminiumKg;
     }
 
     public String getName() {
@@ -58,8 +63,12 @@ public class User {
 
     }
 
-    public boolean isUser(String userID){
-        return this.id.equals(userID);
+    public boolean isUsername(String username){
+        return this.username.equals(username);
+    }
+
+    public boolean isPassword(String password){
+        return this.password.equals(password);
     }
 
     public void reward(String material, double kg, int rewardPoints){
