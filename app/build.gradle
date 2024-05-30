@@ -29,6 +29,7 @@ android {
 }
 
 dependencies {
+    implementation 'org.json:json:20210307'
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.github.lecho:hellocharts-library:1.5.8@aar' // Εδώ προσθέτουμε την εξάρτηση για τη βιβλιοθήκη HelloCharts

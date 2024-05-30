@@ -38,15 +38,11 @@ import okhttp3.Response;
             System.out.println("My Response: " + response.body().string());
         }
 
+            private OkHttpClient client = new OkHttpClient();
 
-
-
-
-           ArrayList<User> fetching(String url) throws IOException, JSONException {
+            public ArrayList<User> fetching(String url) throws IOException, JSONException {
                 ArrayList<User> uList = new ArrayList<>();
-                OkHttpClient client = new OkHttpClient().newBuilder().build();
-                RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
-                Request request = new Request.Builder().url(url).method("POST", body).build();
+                Request request = new Request.Builder().url(url).build();
                 Response response = client.newCall(request).execute();
                 String data = response.body().string();
 
@@ -54,21 +50,54 @@ import okhttp3.Response;
                 Iterator<String> keys = json.keys();
                 while (keys.hasNext()) {
                     String ID = keys.next();
-                    JSONArray infoArray = json.getJSONArray(ID);
-                    uList.add(new User(
+                    JSONObject userJson = json.getJSONObject(ID);
+
+                    User user = new User(
                             Integer.parseInt(ID),
-                            infoArray.getJSONObject(0).getString("Name"),
-                            infoArray.getJSONObject(1).getString("Email"),
-                            infoArray.getJSONObject(2).getString("Username"),
-                            infoArray.getJSONObject(3).getString("Password"),
-                            Integer.parseInt(infoArray.getJSONObject(4).getString("Points")),
-                            Double.parseDouble(infoArray.getJSONObject(5).getString("Aluminium_kg")),
-                            Double.parseDouble(infoArray.getJSONObject(6).getString("Glass_kg")),
-                            Double.parseDouble(infoArray.getJSONObject(7).getString("Paper_kg")),
-                            Double.parseDouble(infoArray.getJSONObject(8).getString("Plastic_kg"))
-                    ));
+                            userJson.getString("Name"),
+                            userJson.getString("Email"),
+                            userJson.getString("Username"),
+                            userJson.getString("Password"),
+                            userJson.getInt("Points"),
+                            userJson.getDouble("Aluminium_kg"),
+                            userJson.getDouble("Glass_kg"),
+                            userJson.getDouble("Paper_kg"),
+                            userJson.getDouble("Plastic_kg")
+                    );
+                    uList.add(user);
                 }
+
                 return uList;
             }
         }
+
+//           ArrayList<User> fetching(String url) throws IOException, JSONException {
+//                ArrayList<User> uList = new ArrayList<>();
+//                OkHttpClient client = new OkHttpClient().newBuilder().build();
+//                RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+//                Request request = new Request.Builder().url(url).method("POST", body).build();
+//                Response response = client.newCall(request).execute();
+//                String data = response.body().string();
+//
+//                JSONObject json = new JSONObject(data);
+//                Iterator<String> keys = json.keys();
+//                while (keys.hasNext()) {
+//                    String ID = keys.next();
+//                    JSONArray infoArray = json.getJSONArray(ID);
+//                    uList.add(new User(
+//                            Integer.parseInt(ID),
+//                            infoArray.getJSONObject(0).getString("Name"),
+//                            infoArray.getJSONObject(1).getString("Email"),
+//                            infoArray.getJSONObject(2).getString("Username"),
+//                            infoArray.getJSONObject(3).getString("Password"),
+//                            Integer.parseInt(infoArray.getJSONObject(4).getString("Points")),
+//                            Double.parseDouble(infoArray.getJSONObject(5).getString("Aluminium_kg")),
+//                            Double.parseDouble(infoArray.getJSONObject(6).getString("Glass_kg")),
+//                            Double.parseDouble(infoArray.getJSONObject(7).getString("Paper_kg")),
+//                            Double.parseDouble(infoArray.getJSONObject(8).getString("Plastic_kg"))
+//                    ));
+//                }
+//                return uList;
+//            }
+
 

@@ -58,23 +58,47 @@ public class SignInActivity extends AppCompatActivity {
                 String username = usernameInput.getText().toString();
                 EditText passwordInput = findViewById(R.id.password);
                 String password = passwordInput.getText().toString();
-                try {
-                    OkHttpHandler okHttpHandler = new OkHttpHandler();
-                    uList = okHttpHandler.fetching(url);
-                    Toast.makeText(SignInActivity.this, "EN DOULEUEI",Toast.LENGTH_LONG).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                Toast.makeText(SignInActivity.this, uList.size(),Toast.LENGTH_SHORT).show();
-                for(int i = 0; i< uList.size();i++){
-                    Toast.makeText(SignInActivity.this, uList.get(i).getName() + uList.get(i).getUsername(),Toast.LENGTH_SHORT).show();
-                    if(uList.get(i).isUsername(username) && uList.get(i).isPassword(password)){
-                        Intent intent = new Intent(SignInActivity.this, UserMainPageActivity.class);
-                        startActivity(intent);
-                        break;
+
+                String url = "http://" + ip + "/fetching.php"; // Προσαρμόστε το URL
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            OkHttpHandler okHttpHandler = new OkHttpHandler();
+                            ArrayList<User> uList = okHttpHandler.fetching(url);
+
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    boolean userFound = false;
+                                    for (User user : uList) {
+                                        if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                                            Intent intent = new Intent(SignInActivity.this, UserMainPageActivity.class);
+                                            intent.putExtra("name", user.getName());
+                                            intent.putExtra("email", user.getEmail());
+                                            intent.putExtra("username", user.getUsername());
+                                            startActivity(intent);
+                                            userFound = true;
+                                            break;
+                                        }
+                                    }
+                                    if (!userFound) {
+                                        Toast.makeText(SignInActivity.this, "Invalid username or password", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(SignInActivity.this, "Error connecting to server", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
                     }
-                }
-                Toast.makeText(SignInActivity.this, "There is no user",Toast.LENGTH_LONG).show();
+                }).start();
             }
         });
     }
