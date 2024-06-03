@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SignInActivity extends AppCompatActivity {
- String ip = "192.168.1.16";
+ String ip = "192.168.56.1";
     ArrayList<User> uList;
 
     @Override

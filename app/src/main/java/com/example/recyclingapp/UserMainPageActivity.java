@@ -48,6 +48,15 @@ public class UserMainPageActivity extends AppCompatActivity {
             }
         });
 
+        Button statisticsButton = findViewById(R.id.statButton);
+        statisticsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserMainPageActivity.this, Statistics.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
