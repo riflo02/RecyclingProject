@@ -25,15 +25,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/top_background" />
 
+    <ImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="92dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/profile1"
+        app:layout_constraintBottom_toTopOf="@+id/textUserType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421" />
+
     <lecho.lib.hellocharts.view.PieChartView
         android:id="@+id/pieChartStatistics"
         android:layout_width="253dp"
         android:layout_height="194dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/bckbtn"
-        app:layout_constraintEnd_toEndOf="@+id/bckbtn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/bckbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRecycledItems" />
 
     <TextView
@@ -79,14 +88,13 @@
         app:layout_constraintTop_toBottomOf="@+id/recycledItemsRecyclerView" />
 
     <Button
-        android:id="@+id/bckbtn"
+        android:id="@+id/logOutAdminButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="Log Out"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pieChartStatistics" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

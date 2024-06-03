@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private final String myIP = "192.168.56.1";
+    private final String myIP = "192.168.1.16";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +66,7 @@ public class SignUpActivity extends AppCompatActivity {
                     intent.putExtra("email", email);
                     intent.putExtra("username", username);
                     intent.putExtra("password", pass1);
+                    intent.putExtra("points",0);
                     startActivity(intent);
                 } else {
                     Toast.makeText(SignUpActivity.this, "The passwords do not match", Toast.LENGTH_LONG).show();

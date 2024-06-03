@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         adminButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,AdminPageActivity.class);
+                Intent intent = new Intent(MainActivity.this,AdminTopStats.class);
                 startActivity(intent);
             }
         });

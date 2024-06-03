@@ -6,7 +6,9 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class UserMainPageActivity extends AppCompatActivity {
     @Override
@@ -14,8 +16,19 @@ public class UserMainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_main_page);
 
-        AppCompatButton backButton = findViewById(R.id.appCompatButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        String username = intent.getStringExtra("username");
+        Integer points = intent.getIntExtra("points",0);
+
+        TextView editText = findViewById(R.id.nameText);
+        editText.setText(name);
+        TextView pointsText = findViewById(R.id.pointsText);
+        pointsText.setText("Total Points: "+points);
+
+        //LogOut Button Listener
+        Button logOutButton = findViewById(R.id.logOutButton);
+        logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Επιστροφή στο MainActivity
@@ -24,13 +37,19 @@ public class UserMainPageActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String email = intent.getStringExtra("email");
-        String username = intent.getStringExtra("username");
 
-        EditText editText = findViewById(R.id.editTextText2);
-        editText.setText(name);
+        //Registration Form Button Listener
+        Button regFormButton = findViewById(R.id.registrationFormButton);
+        regFormButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserMainPageActivity.this, RecyclingForm.class);
+                startActivity(intent);
+            }
+        });
 
     }
+
+
+
 }
