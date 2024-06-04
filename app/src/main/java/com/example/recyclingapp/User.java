@@ -21,7 +21,7 @@ public class User {
         this.email = email;
         this.username = username;
         this.password = password;
-        this.points = 0;
+        this.points = points;
         this.ID = ID;
         this.aluminiumKg= aluminiumKg;
         this.glassKg= aluminiumKg;
@@ -75,9 +75,6 @@ public class User {
         this.email = email;
     }
 
-    public void createForm(){
-
-    }
 
     public boolean isUsername(String username){
         return this.username.equals(username);

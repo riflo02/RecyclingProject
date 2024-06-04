@@ -38,7 +38,18 @@ import okhttp3.Response;
             System.out.println("My Response: " + response.body().string());
         }
 
-            private OkHttpClient client = new OkHttpClient();
+        public void update(String url) throws Exception {
+            OkHttpClient client = new OkHttpClient().newBuilder().build();
+            RequestBody body = RequestBody.create("",
+                    MediaType.parse("text/plain"));
+            Request request = new Request.Builder().url(url).method("POST",
+                    body).build();
+            Response response = client.newCall(request).execute();
+            System.out.println("My Response: " + response.body().string());
+        }
+
+
+        private OkHttpClient client = new OkHttpClient();
 
             public ArrayList<User> fetching(String url) throws IOException, JSONException {
                 ArrayList<User> uList = new ArrayList<>();
@@ -69,7 +80,7 @@ import okhttp3.Response;
 
                 return uList;
             }
-        }
+    }
 
 //           ArrayList<User> fetching(String url) throws IOException, JSONException {
 //                ArrayList<User> uList = new ArrayList<>();

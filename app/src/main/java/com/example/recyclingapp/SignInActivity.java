@@ -75,10 +75,10 @@ public class SignInActivity extends AppCompatActivity {
                                     for (User user : uList) {
                                         if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                                             Intent intent = new Intent(SignInActivity.this, UserMainPageActivity.class);
-                                            intent.putExtra("name", user.getName());
-                                            intent.putExtra("email", user.getEmail());
+                                           // intent.putExtra("name", user.getName());
+                                           // intent.putExtra("email", user.getEmail());
                                             intent.putExtra("username", user.getUsername());
-                                            intent.putExtra("points", user.getPoints());
+                                           // intent.putExtra("points", user.getPoints());
                                             startActivity(intent);
                                             userFound = true;
                                             break;

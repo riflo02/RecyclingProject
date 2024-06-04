@@ -62,11 +62,11 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                     // Άνοιγμα MainPage
                     Intent intent = new Intent(SignUpActivity.this, UserMainPageActivity.class);
-                    intent.putExtra("name", name);
-                    intent.putExtra("email", email);
+                   // intent.putExtra("name", name);
+                   // intent.putExtra("email", email);
                     intent.putExtra("username", username);
-                    intent.putExtra("password", pass1);
-                    intent.putExtra("points",0);
+                   // intent.putExtra("password", pass1);
+                   // intent.putExtra("points",0);
                     startActivity(intent);
                 } else {
                     Toast.makeText(SignUpActivity.this, "The passwords do not match", Toast.LENGTH_LONG).show();
