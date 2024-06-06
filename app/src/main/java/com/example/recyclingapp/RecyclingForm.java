@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -48,12 +49,16 @@ public class RecyclingForm extends AppCompatActivity {
             public void onClick(View v) {
                 EditText quantity = findViewById(R.id.quantityInput);
                 String quantityStr = quantity.getText().toString();
+                Spinner materialSpinner = findViewById(R.id.materialSpinner);
+                String selectedMaterial = materialSpinner.getSelectedItem().toString();
 
                 if (!quantityStr.isEmpty()) {
                     try {
                         int quantityKg = Integer.parseInt(quantityStr);
                         int pointsToAdd = quantityKg * 5;
-                        String url = "http://" + myIP + "/update.php?Username=" + usrname + "&Points=" + pointsToAdd;
+                        String url = "http://" + myIP + "/update.php?Username=" + usrname + "&Points=" + pointsToAdd +
+                                "&Quantity=" +quantityKg + "&Material=" + selectedMaterial;
+
                         try {
                             OkHttpHandler okHttpHandler = new OkHttpHandler();
                             okHttpHandler.update(url);
