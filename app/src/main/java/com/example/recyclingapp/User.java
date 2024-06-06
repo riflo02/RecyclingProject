@@ -9,14 +9,14 @@ public class User {
     private String password;
     private String email;
     private Integer ID;
-    private double materialKgs=0;
-    private double glassKg=0;
-    private double plasticKg=0;
-    private double aluminiumKg=0;
-    private double paperKg=0;
-    private int points=0;
+    private float materialKgs;
+    private float glassKg;
+    private float plasticKg;
+    private float aluminiumKg;
+    private float paperKg;
+    private int points;
 
-    public User(Integer ID,String name,String email, String username, String password,int points,double aluminiumKg,double glassKg,double paperKg,double plasticKg) {
+    public User(Integer ID,String name,String email, String username, String password,int points,float aluminiumKg,float glassKg,float paperKg,float plasticKg) {
         this.name = name;
         this.email = email;
         this.username = username;
@@ -24,9 +24,9 @@ public class User {
         this.points = points;
         this.ID = ID;
         this.aluminiumKg= aluminiumKg;
-        this.glassKg= aluminiumKg;
-        this.paperKg= aluminiumKg;
-        this.plasticKg= aluminiumKg;
+        this.glassKg= glassKg;
+        this.paperKg= paperKg;
+        this.plasticKg= plasticKg;
     }
 
     public String getName() {
@@ -38,17 +38,17 @@ public class User {
     public double getMaterialKgs() {
         return materialKgs;
     }
-    public double getGlassKg() {
+    public float getGlassKg() {
         return glassKg;
     }
-    public double getPlasticKg() {
+    public float getPlasticKg() {
         return plasticKg;
     }
 
-    public double getAluminiumKg() {
+    public float getAluminiumKg() {
         return aluminiumKg;
     }
-    public double getPaperKg() {
+    public float getPaperKg() {
         return paperKg;
     }
 

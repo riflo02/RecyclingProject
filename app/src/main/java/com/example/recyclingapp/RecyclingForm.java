@@ -26,7 +26,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RecyclingForm extends AppCompatActivity {
-    private final String myIP = "192.168.56.1";
+    private final String myIP = "192.168.1.142";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,29 +53,17 @@ public class RecyclingForm extends AppCompatActivity {
                 String selectedMaterial = materialSpinner.getSelectedItem().toString();
 
                 if (!quantityStr.isEmpty()) {
-                    try {
-                        int quantityKg = Integer.parseInt(quantityStr);
-                        int pointsToAdd = quantityKg * 5;
-                        String url = "http://" + myIP + "/update.php?Username=" + usrname + "&Points=" + pointsToAdd +
-                                "&Quantity=" +quantityKg + "&Material=" + selectedMaterial;
+                    Intent intent = new Intent(RecyclingForm.this,SignInAdmin.class);
+                    intent.putExtra("username",usrname);
+                    intent.putExtra("material",selectedMaterial);
+                    intent.putExtra("quantity", quantityStr);
+                    intent.putExtra("boolean", "true");
+                    startActivity(intent);
 
-                        try {
-                            OkHttpHandler okHttpHandler = new OkHttpHandler();
-                            okHttpHandler.update(url);
-                            Toast.makeText(getApplicationContext(), "Points updated successfully",
-                                    Toast.LENGTH_SHORT).show();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    } catch (NumberFormatException e) {
-                        Toast.makeText(RecyclingForm.this, "Please enter a valid number.", Toast.LENGTH_SHORT).show();
-                    }
                 } else {
                     Toast.makeText(RecyclingForm.this, "Please enter the quantity.", Toast.LENGTH_SHORT).show();
                 }
-                Intent intent = new Intent(RecyclingForm.this,UserMainPageActivity.class);
-                intent.putExtra("username",usrname);
-                startActivity(intent);
+
             }
 
 

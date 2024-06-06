@@ -70,10 +70,10 @@ import okhttp3.Response;
                             userJson.getString("Username"),
                             userJson.getString("Password"),
                             userJson.getInt("Points"),
-                            userJson.getDouble("Aluminium_kg"),
-                            userJson.getDouble("Glass_kg"),
-                            userJson.getDouble("Paper_kg"),
-                            userJson.getDouble("Plastic_kg")
+                            (float) userJson.getDouble("Aluminium_kg"),
+                            (float) userJson.getDouble("Glass_kg"),
+                            (float) userJson.getDouble("Paper_kg"),
+                            (float) userJson.getDouble("Plastic_kg")
                     );
                     uList.add(user);
                 }

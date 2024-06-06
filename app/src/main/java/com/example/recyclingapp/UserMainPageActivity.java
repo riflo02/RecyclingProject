@@ -8,13 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class UserMainPageActivity extends AppCompatActivity {
-    private String ip = "192.168.56.1";
+    private String ip = "192.168.1.142";
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,9 +73,16 @@ public class UserMainPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(UserMainPageActivity.this, Statistics.class);
+                intent.putExtra("Username",username);
                 startActivity(intent);
+
             }
         });
+
+        ProgressBar progressBar = findViewById(R.id.progressBar);
+        progressBar.setProgress(selectedUser.getPoints()%50);
+        progressBar.setMax(50);
+
 
     }
 

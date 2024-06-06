@@ -15,80 +15,67 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="409dp"
-        android:layout_height="199dp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewUserStatistics"
-        app:layout_constraintEnd_toEndOf="@+id/textViewUserStatistics"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textViewUserStatistics"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/top_background" />
+        android:id="@+id/imageView8"
+        android:layout_width="490dp"
+        android:layout_height="186dp"
+        android:src="@drawable/top_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewProfile"
         android:layout_width="92dp"
         android:layout_height="82dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/profile1"
         app:layout_constraintBottom_toTopOf="@+id/textUserType"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.421" />
 
-    <lecho.lib.hellocharts.view.PieChartView
-        android:id="@+id/pieChartStatistics"
-        android:layout_width="253dp"
-        android:layout_height="194dp"
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChartAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRecycledItems" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewUserStatistics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:text="The top stats:"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/recycledItemsRecyclerView"
-        app:layout_constraintEnd_toEndOf="@+id/recycledItemsRecyclerView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/recycledItemsRecyclerView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycledItemsRecyclerView"
-        android:layout_width="251dp"
-        android:layout_height="156dp"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/textViewRecycledItems"
-        app:layout_constraintEnd_toEndOf="@+id/textViewRecycledItems"
+        android:text="Top User:"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPoints"
+        app:layout_constraintEnd_toStartOf="@+id/topUsername"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textViewRecycledItems"
-        app:layout_constraintTop_toBottomOf="@+id/textViewUserStatistics" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.5" />
 
     <TextView
         android:id="@+id/textViewRecycledItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="The items he has recycled:"
+        android:text="Total materials recycled"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/pieChartStatistics"
-        app:layout_constraintEnd_toEndOf="@+id/pieChartStatistics"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/pieChartStatistics"
-        app:layout_constraintTop_toBottomOf="@+id/recycledItemsRecyclerView" />
+        app:layout_constraintBottom_toTopOf="@+id/pieChartAdmin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/logOutAdminButton"
+        android:id="@+id/logOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -96,5 +83,55 @@
         android:text="Log Out"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/topUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewUserStatistics"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewUserStatistics" />
+
+    <TextView
+        android:id="@+id/textViewPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Top user points:"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewRecycledItems"
+        app:layout_constraintEnd_toStartOf="@+id/topPoints"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserStatistics"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/topPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textViewPoints"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewPoints" />
+
+    <TextView
+        android:id="@+id/adminTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Administrator"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

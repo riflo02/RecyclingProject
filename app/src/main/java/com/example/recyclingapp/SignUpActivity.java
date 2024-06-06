@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private final String myIP = "192.168.1.17";
+    private final String myIP = "192.168.1.142";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

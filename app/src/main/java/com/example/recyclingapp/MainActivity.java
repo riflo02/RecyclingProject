@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         adminButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,AdminTopStats.class);
+                Intent intent = new Intent(MainActivity.this,SignInAdmin.class);
+                intent.putExtra("boolean", "false");
                 startActivity(intent);
             }
         });
