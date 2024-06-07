@@ -29,61 +29,63 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SignInActivity extends AppCompatActivity {
-    String ip = "192.168.1.142";
-    ArrayList<User> uList;
+    String myIP = "192.168.1.142"; // IP address of the server
+    ArrayList<User> uList; // List to store user data
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        TextView signupText = findViewById(R.id.SignUp_txt);
-        String url= "http://"+ip+"/fetching.php";
 
-        //Άνοιγμα παραθύρου για sign in
+        TextView signupText = findViewById(R.id.SignUp_txt); // TextView for sign-up option
+        String url = "http://" + myIP + "/fetching.php"; // URL to fetch user data
+
+        // Set a click listener on the sign-up text to navigate to the SignUpActivity
         signupText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
-                startActivity(intent);
+                startActivity(intent); // Start the SignUpActivity
             }
         });
 
-        //Άνοιγμα userMainPage
+        // Initialize the login button and set a click listener for user login
         Button logIn = findViewById(R.id.login_button);
-
         logIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Get user input from the login form fields
                 EditText usernameInput = findViewById(R.id.uname_input);
                 String username = usernameInput.getText().toString();
                 EditText passwordInput = findViewById(R.id.password);
                 String password = passwordInput.getText().toString();
 
-                String url = "http://" + ip + "/fetching.php"; // Προσαρμόστε το URL
+                String url = "http://" + myIP + "/fetching.php"; // Adjust the URL if needed
 
+                // Create a new thread to handle network operations
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         try {
-                            OkHttpHandler okHttpHandler = new OkHttpHandler();
-                            ArrayList<User> uList = okHttpHandler.fetching(url);
+                            OkHttpHandler okHttpHandler = new OkHttpHandler(); // Create a new OkHttpHandler
+                            ArrayList<User> uList = okHttpHandler.fetching(url); // Fetch the user list from the server
 
+                            // Run the UI-related code on the main thread
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     boolean userFound = false;
+                                    // Iterate through the user list to find a match for the username and password
                                     for (User user : uList) {
                                         if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                                             Intent intent = new Intent(SignInActivity.this, UserMainPageActivity.class);
-                                           // intent.putExtra("name", user.getName());
-                                           // intent.putExtra("email", user.getEmail());
-                                            intent.putExtra("username", user.getUsername());
-                                           // intent.putExtra("points", user.getPoints());
-                                            startActivity(intent);
+                                            intent.putExtra("username", user.getUsername()); // Pass the username to the next activity
+                                            startActivity(intent); // Start the UserMainPageActivity
                                             userFound = true;
                                             break;
                                         }
                                     }
+                                    // Show a toast message if the username or password is invalid
                                     if (!userFound) {
                                         Toast.makeText(SignInActivity.this, "Invalid username or password", Toast.LENGTH_LONG).show();
                                     }
@@ -91,6 +93,7 @@ public class SignInActivity extends AppCompatActivity {
                             });
                         } catch (Exception e) {
                             e.printStackTrace();
+                            // Show a toast message if there's an error connecting to the server
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -99,7 +102,7 @@ public class SignInActivity extends AppCompatActivity {
                             });
                         }
                     }
-                }).start();
+                }).start(); // Start the thread
             }
         });
     }

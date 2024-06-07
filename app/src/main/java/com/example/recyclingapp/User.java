@@ -84,14 +84,4 @@ public class User {
         return this.password.equals(password);
     }
 
-    public void reward(String material, double kg, int rewardPoints){
-        points+=rewardPoints;
-        switch (material){
-            case "Glass" : glassKg+=kg;
-            case "Plastic" : plasticKg+=kg;
-            case "Paper" : paperKg+=kg;
-            case "Aluminium": aluminiumKg+=kg;
-        }
-    }
-
 }
